@@ -93,9 +93,9 @@ x_train, x_test, y_train, y_test = train_test_split(f_i, c, test_size = 0.3, ran
 nb_class = NBClassifier()
 nb_class.fit(x_train, y_train)
 y_pred = nb_class.predict(x_test)
-print('accuracy_score = {0}'.format(accuracy_score(y_test, y_pred)))
+print('accuracy_score = {0}\n'.format(accuracy_score(y_test, y_pred)))
 
 m_nb_class = MultinomialNB()
 m_nb_class.fit(x_train, y_train)
 y_pred = m_nb_class.predict(x_test)
-print('accuracy_score = {0}'.format(accuracy_score(y_test, y_pred)))
+print('accuracy_score = {0}\n'.format(accuracy_score(y_test, y_pred)))
