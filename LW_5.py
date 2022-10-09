@@ -52,7 +52,7 @@ class NBClassifier:
         """
     def fit(self, f_i_matrix, c_vector):
         """
-        f_i_matrix : Feature matrix - Cell (i, j) contains number of occurrences j-th word in i-th document
+        f_i_matrix : Feature matrix - Cell (i, j) contains number of occurrences of j-th word in i-th document
         c_vector : Vector of classes assignment - contains result of the classification for i-th class
         """
         unique, counts = np.unique(c_vector, return_counts=True)
