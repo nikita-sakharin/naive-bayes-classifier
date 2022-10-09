@@ -40,20 +40,20 @@ def f_i_and_c():
 
 class NBClassifier:
     def __init__(self):
-        self.length = 0 # Длина матрицы признаков
+        self.length = 0 # Feature matrix dimension
         self.stat = dict()
-        self.d = 0 # Кол-во документов всего
-        self.v = 0 # Размер словаря
+        self.d = 0 # Documensts count
+        self.v = 0 # Number of unique words (dictionary size)
         """
-        [Класс документа] -> (d_i, l_c, w_i_c)
-        d_i   - [Количество документов данного класса]
-        l_c   - [количество слов во всех докуметах данного класса]
-        w_i_c - [на i-ой позиции массива кол-во вхождений i-го слова в документы класса]
+        [Document class] -> (d_i, l_c, w_i_c)
+        d_i   - [Number of documents of this class]
+        l_c   - [Number of words in all documents of this class]
+        w_i_c - [Number of occurrences i-th word in all documents of class]
         """
     def fit(self, f_i_matrix, c_vector):
         """
-        f_i_matrix : Матрица признаков - на позиции (i, j) содержится кол-во вхождений в i-ый документ j-го слова словаря
-        c_vector : Вектор классов - на i-ой позиции хранится класс i-го документа
+        f_i_matrix : Feature matrix - Cell (i, j) contains number of occurrences j-th word in i-th document
+        c_vector : Vector of classes assignment - contains result of the classification for i-th class
         """
         unique, counts = np.unique(c_vector, return_counts=True)
         length = len(f_i_matrix[0])
